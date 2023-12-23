@@ -15,14 +15,10 @@
       );
     superModulePath = lib.take ((builtins.length modulePath) - 1) modulePath;
 
-    module = let
-      moduleFunction = lib.toFunction (import path);
-    in
-      lib.pipe moduleFunction [
-        lib.functionArgs
-        (lib.mapAttrs (name: _: haumeaInputs.${name}))
-        moduleFunction
-      ];
+    module =
+      cell.lib.passInputsToFunctionArgs
+      haumeaInputs
+      (lib.toFunction (import path));
   in
     moduleInputs @ {
       options,
@@ -45,7 +41,7 @@
         then lib.setAttrByPath modulePath moduleBody.options
         else {};
       config =
-        moduleBody.config or (lib.removeAttrs ["imports" "options"] moduleBody);
+        moduleBody.config or (builtins.removeAttrs moduleBody ["imports" "options"]);
     };
 in
   inputs.haumea.lib.load {

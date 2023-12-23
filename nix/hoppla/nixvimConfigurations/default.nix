@@ -1,13 +1,9 @@
 # only configure base neovim configs here
 # outsource plugin and colorscheme configurations to a nixvimModule
 #
-# base neovim options: https://nix-community.github.io/nixvim/NeovimOptions/index.html
-{cell}: _: {
-  imports = [
-    cell.nixvimModules.catppuccin
-    cell.nixvimModules.lines
-  ];
-
+# base neovim options:
+# https://nix-community.github.io/nixvim/NeovimOptions/index.html
+{cell}: {
   config = {
     # global variables
     globals = {

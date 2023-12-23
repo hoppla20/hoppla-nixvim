@@ -37,6 +37,7 @@
         (nixago "configs")
         (devshells "shells")
 
+        (functions "lib")
         (runnables "packages")
         (functions "nixvimModules")
         (functions "nixvimConfigurations")
