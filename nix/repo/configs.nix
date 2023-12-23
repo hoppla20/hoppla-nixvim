@@ -79,7 +79,7 @@ in
           commit = {
             header = {
               length = 89;
-              imperative = true;
+              imperative = false;
               case = "lower";
               invalidLastCharacters = ".";
             };
