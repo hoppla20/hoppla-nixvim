@@ -4,7 +4,6 @@
 }: let
   inherit (inputs) nixpkgs nixvim;
   inherit (nixpkgs) lib;
-  inherit (cell) nixvimModules;
 
   nixvimPackages =
     lib.mapAttrs'
@@ -13,10 +12,10 @@
       (nixvim.legacyPackages.${nixpkgs.system}.makeNixvimWithModule {
         pkgs = nixpkgs;
         module = {
-          imports = builtins.attrValues cell.nixvimModules;
+          imports = [cell.nixvimConfigurations.${name}];
         };
       }))
-    nixvimModules;
+    (lib.filterAttrs (_: builtins.isFunction) cell.nixvimConfigurations);
 in
   nixvimPackages
   // {

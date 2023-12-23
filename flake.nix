@@ -2,7 +2,7 @@
   description = "Hoppla Nixvim configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixago = {
       url = "github:nix-community/nixago";
@@ -14,7 +14,7 @@
     };
 
     std = {
-      url = "github:divnix/std/v0.24.0-1";
+      url = "github:divnix/std";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nixago.follows = "nixago";
@@ -24,7 +24,7 @@
     haumea.follows = "std/haumea";
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-23.11";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -37,8 +37,9 @@
         (nixago "configs")
         (devshells "shells")
 
-        (installables "packages")
+        (runnables "packages")
         (functions "nixvimModules")
+        (functions "nixvimConfigurations")
       ];
     }
     {
