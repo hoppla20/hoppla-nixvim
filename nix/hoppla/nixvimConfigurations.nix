@@ -11,11 +11,7 @@
       haumeaInputs
       (lib.toFunction (import path));
   in
-    moduleInputs @ {
-      options,
-      config,
-      ...
-    }: let
+    moduleInputs @ {config, ...}: let
       configurationBody =
         if lib.isFunction configuration
         then configuration moduleInputs

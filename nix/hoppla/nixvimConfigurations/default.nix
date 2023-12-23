@@ -1,11 +1,5 @@
-# only configure base neovim configs here
-# outsource plugin and colorscheme configurations to a nixvimModule
-#
-# base neovim options:
-# https://nix-community.github.io/nixvim/NeovimOptions/index.html
 {cell}: {
   config = {
-    # global variables
     globals = {
       mapleader = " ";
     };
@@ -13,7 +7,19 @@
     options = {
       number = true;
       relativenumber = true;
-      shiftwidth = 2;
+      wrap = false;
+    };
+
+    clipboard.providers.wl-copy.enable = true;
+
+    hoppla = {
+      languages = {
+        nix.enable = true;
+      };
+
+      plugins = {
+        utils.direnv.enable = true;
+      };
     };
 
     # regex match groups
