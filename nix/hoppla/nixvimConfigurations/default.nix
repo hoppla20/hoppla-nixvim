@@ -21,6 +21,7 @@
 
       plugins = {
         utils.direnv.enable = true;
+        lines.enable = true;
       };
     };
 

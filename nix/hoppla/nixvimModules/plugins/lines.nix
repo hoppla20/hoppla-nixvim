@@ -1,3 +1,5 @@
+# https://nix-community.github.io/nixvim/plugins/bufferline
+# https://nix-community.github.io/nixvim/plugins/lualine
 _: {
   lib,
   config,
@@ -13,7 +15,7 @@ _: {
     ;
 in {
   options = {
-    enable = mkEnableOption "Lines" // {default = true;};
+    enable = mkEnableOption "Lines";
   };
 
   config = mkIf cfg.self.enable {
