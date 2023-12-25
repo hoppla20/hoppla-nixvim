@@ -1,3 +1,4 @@
+# https://nix-community.github.io/nixvim/colorschemes/catppuccin
 _: {
   lib,
   config,
@@ -8,12 +9,15 @@ _: {
     (lib)
     mkOption
     mkEnableOption
+    mkIf
     types
     ;
 in {
   options = {
+    enable = mkEnableOption "catppuccin";
+
     darkTheme =
-      mkEnableOption "Dark Theme" // {default = true;};
+      mkEnableOption "dark theme" // {default = true;};
 
     flavours = {
       dark = mkOption {
@@ -27,7 +31,7 @@ in {
     };
   };
 
-  config = {
+  config = mkIf cfg.self.enable {
     colorscheme = "catppuccin";
     colorschemes.catppuccin = {
       enable = true;

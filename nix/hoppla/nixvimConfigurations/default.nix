@@ -13,6 +13,8 @@
     clipboard.providers.wl-copy.enable = true;
 
     hoppla = {
+      colorschemes.catppuccin.enable = true;
+
       languages = {
         nix.enable = true;
       };
