@@ -2,9 +2,11 @@
 
 ## Installation
 
-Single dependency: [nix](https://nixos.org/)
-
-Run: `nix run github:hoppla20/hoppla-nixvim`
+- Single dependency: [nix](https://nixos.org/)
+- Run:
+  `nix run github:hoppla20/hoppla-nixvim -- $file`
+- Install:
+  `nix profile install github: hoppla20/hoppla-nixvim`
 
 ## Keymap convention
 
