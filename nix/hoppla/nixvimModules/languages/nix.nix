@@ -1,3 +1,4 @@
+# https://nix-community.github.io/nixvim/plugins/nix
 _: {
   lib,
   cfg,
