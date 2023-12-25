@@ -1,5 +1,11 @@
 # Hoppla Nixvim
 
+## Installation
+
+Single dependency: [nix](https://nixos.org/)
+
+Run: `nix run github:hoppla20/hoppla-nixvim`
+
 ## Keymap convention
 
 ### Leader prefixes
