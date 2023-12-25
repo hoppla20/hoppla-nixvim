@@ -8,6 +8,7 @@
       number = true;
       relativenumber = true;
       wrap = false;
+      foldenable = false; # enable folding by using 'zc'
     };
 
     clipboard.providers.wl-copy.enable = true;
@@ -20,8 +21,15 @@
       };
 
       plugins = {
-        utils.direnv.enable = true;
         lines.enable = true;
+        telescope.enable = true;
+        vim-vinegar.enable = true;
+        treesitter.enable = true;
+
+        utils = {
+          git.enable = true;
+          direnv.enable = true;
+        };
       };
     };
 
