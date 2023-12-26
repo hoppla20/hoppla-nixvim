@@ -1,4 +1,6 @@
 # https://nix-community.github.io/nixvim/plugins/lsp
+# https://nix-community.github.io/nixvim/plugins/lsp-lines
+# https://nix-community.github.io/nixvim/plugins/lsp-format
 # language servers are configured in `hoppla.languages.*`
 _: {
   lib,
