@@ -19,6 +19,7 @@
 | <leader>f | Files |
 | <leader>b | Buffers |
 | <leader>g | Git |
+| <leader>l | LSP |
 
 ## Interesting
 

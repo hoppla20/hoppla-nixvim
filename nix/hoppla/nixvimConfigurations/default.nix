@@ -25,6 +25,7 @@
         telescope.enable = true;
         vim-vinegar.enable = true;
         treesitter.enable = true;
+        lsp.enable = true;
 
         utils = {
           git.enable = true;
