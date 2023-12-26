@@ -1,18 +1,35 @@
 # https://nix-community.github.io/nixvim/keymaps
 _: {
-  keymaps = let
-    normal = key: action: args:
-      args
-      // {
-        inherit key action;
-        mode = "n";
-      };
-  in [
-    (normal "<M-,>" ":BufferLineCyclePrev<cr>" {})
-    (normal "<M-.>" ":BufferLineCycleNext<cr>" {})
-    (normal "<M-<>" ":BufferLineMovePrev<cr>" {})
-    (normal "<M->>" ":BufferLineMoveNext<cr>" {})
-    (normal "<M-q>" ":bdelete<cr>" {})
-    (normal "<leader>bp" ":BufferLinePick<cr>" {})
+  keymaps = [
+    {
+      key = "<M-,>";
+      action = ":BufferLineCyclePrev<cr>";
+      options.silent = true;
+    }
+    {
+      key = "<M-.>";
+      action = ":BufferLineCycleNext<cr>";
+      options.silent = true;
+    }
+    {
+      key = "<M-<>";
+      action = ":BufferLineMovePrev<cr>";
+      options.silent = true;
+    }
+    {
+      key = "<M->>";
+      action = ":BufferLineMoveNext<cr>";
+      options.silent = true;
+    }
+    {
+      key = "<M-q>";
+      action = ":bdelete<cr>";
+      options.silent = true;
+    }
+    {
+      key = "<leader>bp";
+      action = ":BufferLinePick<cr>";
+      options.silent = true;
+    }
   ];
 }
