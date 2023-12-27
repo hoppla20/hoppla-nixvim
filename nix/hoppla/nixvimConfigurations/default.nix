@@ -26,6 +26,7 @@
         vim-vinegar.enable = true;
         treesitter.enable = true;
         lsp.enable = true;
+        nvim-cmp.enable = true;
 
         utils = {
           git.enable = true;
