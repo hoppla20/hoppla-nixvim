@@ -49,6 +49,7 @@
           vim-kitty-navigator.enable = true;
           comment-nvim.enable = true;
           alpha.enable = true;
+          undotree.enable = true;
         };
       };
     };
