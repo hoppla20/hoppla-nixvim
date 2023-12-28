@@ -47,6 +47,7 @@
           todo-comments.enable = true;
           which-key.enable = true;
           vim-kitty-navigator.enable = true;
+          comment-nvim.enable = true;
         };
       };
     };

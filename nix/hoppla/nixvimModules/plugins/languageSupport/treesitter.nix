@@ -48,6 +48,8 @@ in {
           keymaps.smartRename = "grr";
         };
       };
+
+      ts-context-commentstring.enable = true;
     };
   };
 }
