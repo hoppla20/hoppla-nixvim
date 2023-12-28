@@ -20,64 +20,49 @@ in {
 
   config = mkIf cfg.self.enable {
     plugins = {
-      bufferline = {
+      barbar = {
         enable = true;
+        autoHide = true;
+        keymaps = {
+          silent = true;
+          close = "<M-q>";
+          next = "<M-.>";
+          previous = "<M-,>";
+          moveNext = "<M-S-.>";
+          movePrevious = "<M-S-,>";
+          pick = "${cfg.root.leaderPrefixes.buffers}p";
+          pin = "${cfg.root.leaderPrefixes.buffers}P";
+          goTo1 = "<M-1>";
+          goTo2 = "<M-2>";
+          goTo3 = "<M-3>";
+          goTo4 = "<M-4>";
+          goTo5 = "<M-5>";
+          goTo6 = "<M-6>";
+          goTo7 = "<M-7>";
+          goTo8 = "<M-8>";
+          goTo9 = "<M-9>";
+          orderByBufferNumber = "${cfg.root.leaderPrefixes.buffers}b";
+          orderByDirectory = "${cfg.root.leaderPrefixes.buffers}d";
+          orderByLanguage = "${cfg.root.leaderPrefixes.buffers}l";
+          orderByWindowNumber = "${cfg.root.leaderPrefixes.buffers}w";
+        };
       };
 
-      lualine = {
-        enable = true;
-      };
+      lualine.enable = true;
     };
 
-    keymaps = [
-      {
-        key = "<M-,>";
-        action = ":BufferLineCyclePrev<cr>";
+    keymaps = let
+      barbarMap = key: cmd: {
+        inherit key;
+        action = ":${cmd}<cr>";
         options = {
           silent = true;
-          desc = "Switch to next buffer";
+          desc = cmd;
         };
-      }
-      {
-        key = "<M-.>";
-        action = ":BufferLineCycleNext<cr>";
-        options = {
-          silent = true;
-          desc = "Switch to previous buffer";
-        };
-      }
-      {
-        key = "<M-S-,>";
-        action = ":BufferLineMovePrev<cr>";
-        options = {
-          silent = true;
-          desc = "Move current buffer to left";
-        };
-      }
-      {
-        key = "<M-S-.>";
-        action = ":BufferLineMoveNext<cr>";
-        options = {
-          silent = true;
-          desc = "Move current buffer to right";
-        };
-      }
-      {
-        key = "${cfg.root.leaderPrefixes.buffers}p";
-        action = ":BufferLinePick<cr>";
-        options = {
-          silent = true;
-          desc = "Pick buffer";
-        };
-      }
-      {
-        key = "<M-q>";
-        action = ":bdelete<cr>";
-        options = {
-          silent = true;
-          desc = "Delete current buffer";
-        };
-      }
+      };
+    in [
+      (barbarMap "<M-S-q>" "BufferCloseAllButCurrentOrPinned")
+      (barbarMap "${cfg.root.leaderPrefixes.buffers}r" "BufferRestore")
     ];
   };
 }
