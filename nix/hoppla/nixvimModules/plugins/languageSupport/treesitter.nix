@@ -43,7 +43,6 @@ in {
 
       treesitter-refactor = {
         enable = true;
-        highlightCurrentScope.enable = true;
         smartRename = {
           enable = true;
           keymaps.smartRename = "grr";
