@@ -31,20 +31,20 @@ in {
         "<C-p>" = actionWithDesc "git_files";
         "<M-p>" = actionWithDesc "find_files";
 
-        "<leader>sr" = actionWithDesc "live_grep";
-        "<leader>bf" = actionWithDesc "buffers";
-        "<leader>fo" = actionWithDesc "oldfiles";
-        "<leader>gb" = actionWithDesc "git_branches";
+        "${cfg.root.leaderPrefixes.search}r" = actionWithDesc "live_grep";
+        "${cfg.root.leaderPrefixes.buffers}f" = actionWithDesc "buffers";
+        "${cfg.root.leaderPrefixes.files}o" = actionWithDesc "oldfiles";
+        "${cfg.root.leaderPrefixes.git}b" = actionWithDesc "git_branches";
 
-        "<leader>tc" = actionWithDesc "commands";
-        "<leader>tm" = actionWithDesc "marks";
-        "<leader>tM" = actionWithDesc "man_pages";
-        "<leader>to" = actionWithDesc "vim_options";
-        "<leader>ta" = actionWithDesc "autocommands";
-        "<leader>tf" = actionWithDesc "current_buffer_fuzzy_find";
-        "<leader>tr" = actionWithDesc "resume";
-        "<leader>tp" = actionWithDesc "pickers";
-        "<leader>tk" = actionWithDesc "keymaps";
+        "${cfg.root.leaderPrefixes.telescope}c" = actionWithDesc "commands";
+        "${cfg.root.leaderPrefixes.telescope}m" = actionWithDesc "marks";
+        "${cfg.root.leaderPrefixes.telescope}M" = actionWithDesc "man_pages";
+        "${cfg.root.leaderPrefixes.telescope}o" = actionWithDesc "vim_options";
+        "${cfg.root.leaderPrefixes.telescope}a" = actionWithDesc "autocommands";
+        "${cfg.root.leaderPrefixes.telescope}f" = actionWithDesc "current_buffer_fuzzy_find";
+        "${cfg.root.leaderPrefixes.telescope}r" = actionWithDesc "resume";
+        "${cfg.root.leaderPrefixes.telescope}p" = actionWithDesc "pickers";
+        "${cfg.root.leaderPrefixes.telescope}k" = actionWithDesc "keymaps";
       };
     };
   };

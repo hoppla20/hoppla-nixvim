@@ -12,8 +12,6 @@ _: {
     mkMerge
     types
     ;
-
-  keyPrefix = "<leader>t";
 in {
   options = {
     enable = mkEnableOption "todo-comments";
@@ -22,7 +20,7 @@ in {
   config = mkIf cfg.self.enable {
     plugins.todo-comments = {
       enable = true;
-      keymaps.todoTelescope.key = "<leader>tt";
+      keymaps.todoTelescope.key = "${cfg.root.leaderPrefixes.telescope}t";
     };
   };
 }

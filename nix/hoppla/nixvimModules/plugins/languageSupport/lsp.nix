@@ -33,7 +33,7 @@ in {
             "gd" = "definition";
             "gi" = "implementation";
             "gt" = "type_definition";
-            "<leader>lf" = "format";
+            "${cfg.root.leaderPrefixes.lsp}f" = "format";
           };
         };
       };
@@ -59,52 +59,24 @@ in {
     };
 
     keymaps = let
-      prefix = "<leader>l";
+      prefix = cfg.root.leaderPrefixes.lsp;
+      actionWithDesc = key: action: {
+        inherit key;
+        action = ":Lspsaga ${action}<cr>";
+        options.desc = "Lspsaga ${action}";
+      };
     in [
-      {
-        key = "K";
-        action = ":Lspsaga hover_doc<cr>";
-      }
-      {
-        key = "<leader>j";
-        action = ":Lspsaga diagnostic_jump_next<cr>";
-      }
-      {
-        key = "<leader>k";
-        action = ":Lspsaga diagnostic_jump_prev<cr>";
-      }
-      {
-        key = "${prefix}a";
-        action = ":Lspsaga code_action<cr>";
-      }
-      {
-        key = "${prefix}f";
-        action = ":Lspsaga finder<cr>";
-      }
-      {
-        key = "${prefix}d";
-        action = ":Lspsaga peek_definition<cr>";
-      }
-      {
-        key = "${prefix}t";
-        action = ":Lspsaga peek_type_definition<cr>";
-      }
-      {
-        key = "${prefix}r";
-        action = ":Lspsaga rename<cr>";
-      }
-      {
-        key = "${prefix}o";
-        action = ":Lspsaga outline<cr>";
-      }
-      {
-        key = "${prefix}h";
-        action = ":Lspsaga incoming_calls<cr>";
-      }
-      {
-        key = "${prefix}H";
-        action = ":Lspsaga outgoing_calls<cr>";
-      }
+      (actionWithDesc "K" "hover_doc")
+      (actionWithDesc "<leader>j" "diagnostic_jump_next")
+      (actionWithDesc "<leader>k" "diagnostic_jump_prev")
+      (actionWithDesc "${prefix}a" "code_action")
+      (actionWithDesc "${prefix}f" "finder")
+      (actionWithDesc "${prefix}d" "peek_definition")
+      (actionWithDesc "${prefix}t" "peek_type_definition")
+      (actionWithDesc "${prefix}r" "rename")
+      (actionWithDesc "${prefix}o" "outline")
+      (actionWithDesc "${prefix}h" "incoming_calls")
+      (actionWithDesc "${prefix}H" "outgoing_calls")
     ];
   };
 }

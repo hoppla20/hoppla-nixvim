@@ -30,7 +30,7 @@ in {
 
     keymaps = [
       {
-        key = "<leader>gg";
+        key = "${cfg.root.leaderPrefixes.git}g";
         mode = "n";
         action = ":Neogit<cr>";
       }
