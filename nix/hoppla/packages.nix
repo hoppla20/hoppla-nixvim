@@ -15,7 +15,7 @@
           imports = [cell.nixvimConfigurations.${name}];
         };
       }))
-    (lib.filterAttrs (_: builtins.isFunction) cell.nixvimConfigurations);
+    cell.nixvimConfigurations;
 in
   nixvimPackages
   // {
