@@ -33,6 +33,7 @@ in {
 
       nvim-cmp = {
         enable = true;
+        completion.keywordLength = 3;
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
