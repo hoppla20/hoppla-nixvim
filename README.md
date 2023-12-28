@@ -20,6 +20,7 @@
 | <leader>b | Buffers |
 | <leader>g | Git |
 | <leader>l | LSP |
+| <leader>T | ToDo |
 
 ## Interesting
 
