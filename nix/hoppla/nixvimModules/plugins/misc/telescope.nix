@@ -43,7 +43,7 @@ in {
         "${cfg.root.leaderPrefixes.telescope}a" = actionWithDesc "autocommands";
         "${cfg.root.leaderPrefixes.telescope}f" = actionWithDesc "current_buffer_fuzzy_find";
         "${cfg.root.leaderPrefixes.telescope}r" = actionWithDesc "resume";
-        "${cfg.root.leaderPrefixes.telescope}p" = actionWithDesc "pickers";
+        "${cfg.root.leaderPrefixes.telescope}P" = actionWithDesc "pickers";
         "${cfg.root.leaderPrefixes.telescope}k" = actionWithDesc "keymaps";
       };
     };
