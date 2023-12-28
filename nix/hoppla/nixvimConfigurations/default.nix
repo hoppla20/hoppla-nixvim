@@ -43,6 +43,7 @@
           cursorline.enable = true;
           telescope.enable = true;
           nvim-autopairs.enable = true;
+          rainbow-delimiters.enable = true;
         };
       };
     };
