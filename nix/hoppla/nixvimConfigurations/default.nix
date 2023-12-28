@@ -23,10 +23,17 @@
       plugins = {
         lines.enable = true;
         telescope.enable = true;
-        vim-vinegar.enable = true;
+
+        # language support
         treesitter.enable = true;
         lsp.enable = true;
+
+        # completion
         nvim-cmp.enable = true;
+
+        # file explorer
+        #vim-vinegar.enable = true;
+        oil.enable = true;
 
         utils = {
           git.enable = true;
