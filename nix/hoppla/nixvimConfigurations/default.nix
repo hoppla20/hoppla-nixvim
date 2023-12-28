@@ -45,6 +45,7 @@
           nvim-autopairs.enable = true;
           rainbow-delimiters.enable = true;
           todo-comments.enable = true;
+          which-key.enable = true;
         };
       };
     };
