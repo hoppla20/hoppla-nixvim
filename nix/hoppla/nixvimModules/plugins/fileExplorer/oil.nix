@@ -23,8 +23,11 @@ in {
       plugins.oil = {
         enable = true;
         deleteToTrash = true;
-        trashCommand = "trash put";
         skipConfirmForSimpleEdits = true;
+        keymaps = {
+          "q" = "actions.close";
+          "gr" = "actions.refresh";
+        };
       };
 
       keymaps = [
