@@ -21,23 +21,26 @@
       };
 
       plugins = {
-        lines.enable = true;
-        telescope.enable = true;
+        languageSupport = {
+          treesitter.enable = true;
+          lsp.enable = true;
+        };
 
-        # language support
-        treesitter.enable = true;
-        lsp.enable = true;
+        completion.nvim-cmp.enable = true;
 
-        # completion
-        nvim-cmp.enable = true;
-
-        # file explorer
-        #vim-vinegar.enable = true;
-        oil.enable = true;
+        fileExplorer = {
+          #vim-vinegar.enable = true;
+          oil.enable = true;
+        };
 
         utils = {
           git.enable = true;
           direnv.enable = true;
+        };
+
+        misc = {
+          lines.enable = true;
+          telescope.enable = true;
         };
       };
     };
