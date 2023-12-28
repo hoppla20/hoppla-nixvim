@@ -48,6 +48,7 @@
           which-key.enable = true;
           vim-kitty-navigator.enable = true;
           comment-nvim.enable = true;
+          alpha.enable = true;
         };
       };
     };
