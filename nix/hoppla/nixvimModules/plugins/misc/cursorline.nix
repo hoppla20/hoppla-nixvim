@@ -18,6 +18,9 @@ in {
   };
 
   config = mkIf cfg.self.enable {
-    plugins.cursorline.enable = true;
+    plugins.cursorline = {
+      enable = true;
+      cursorline.timeout = 618;
+    };
   };
 }
