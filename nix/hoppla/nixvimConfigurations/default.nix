@@ -31,6 +31,7 @@
         fileExplorer = {
           #vim-vinegar.enable = true;
           oil.enable = true;
+          nvim-tree.enable = true;
         };
 
         utils = {
