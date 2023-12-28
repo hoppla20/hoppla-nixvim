@@ -31,8 +31,11 @@ in {
     keymaps = [
       {
         key = "${cfg.root.leaderPrefixes.git}g";
-        mode = "n";
         action = ":Neogit<cr>";
+        options = {
+          silent = true;
+          desc = "Open neogit";
+        };
       }
     ];
   };
