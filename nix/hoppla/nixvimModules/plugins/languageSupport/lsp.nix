@@ -45,7 +45,7 @@ in {
           width = 0.618;
           height = 0.618;
         };
-        lightbulb.enable = true;
+        lightbulb.enable = false;
       };
 
       lsp-lines.enable = true;
