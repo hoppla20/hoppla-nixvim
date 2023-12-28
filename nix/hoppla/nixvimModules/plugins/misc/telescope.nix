@@ -29,7 +29,9 @@ in {
         };
       in {
         "<C-p>" = actionWithDesc "git_files";
+        "${cfg.root.leaderPrefixes.files}f" = "git_files";
         "<M-p>" = actionWithDesc "find_files";
+        "${cfg.root.leaderPrefixes.files}F" = "find_files";
 
         "${cfg.root.leaderPrefixes.search}r" = actionWithDesc "live_grep";
         "${cfg.root.leaderPrefixes.buffers}f" = actionWithDesc "buffers";
