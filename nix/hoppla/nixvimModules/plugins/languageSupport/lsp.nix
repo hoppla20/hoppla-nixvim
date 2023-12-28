@@ -45,9 +45,7 @@ in {
           width = 0.618;
           height = 0.618;
         };
-        lightbulb = {
-          sign = false;
-        };
+        lightbulb.enable = true;
       };
 
       lsp-lines.enable = true;
@@ -55,6 +53,17 @@ in {
       lsp-format = {
         enable = true;
         lspServersToEnable = "all";
+      };
+
+      none-ls = {
+        enable = true;
+        enableLspFormat = true;
+        sources = {
+          diagnostics = {
+            shellcheck.enable = true;
+            statix.enable = true;
+          };
+        };
       };
     };
 
