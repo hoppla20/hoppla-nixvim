@@ -24,11 +24,11 @@ in {
           val = 2;
         }
         {
+          type = "text";
           opts = {
             hl = "Type";
             position = "center";
           };
-          type = "text";
           val = [
             "  ███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗  "
             "  ████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║  "
@@ -46,28 +46,26 @@ in {
           type = "group";
           val = [
             {
-              command = ":ene<cr>";
               desc = "󰈔  New file";
+              command = ":ene<cr>";
               shortcut = "e";
             }
             {
-              command = ":qa<cr>";
+              desc = "󰈞  Find file";
+              command = ":Telescope find_files<cr>";
+              shortcut = "f";
+            }
+            {
+              desc = "  Recent files";
+              command = ":Telescope oldfiles<cr>";
+              shortcut = "r";
+            }
+            {
               desc = "󰗼  Quit Neovim";
-              shortcut = "SPC q";
+              command = ":qa<cr>";
+              shortcut = "q";
             }
           ];
-        }
-        {
-          type = "padding";
-          val = 2;
-        }
-        {
-          opts = {
-            hl = "Keyword";
-            position = "center";
-          };
-          type = "text";
-          val = "Programmer: A machine that turns coffee into code.";
         }
       ];
     };
