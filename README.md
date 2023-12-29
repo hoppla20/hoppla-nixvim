@@ -41,3 +41,9 @@
 | zR / zM | Close / Open all buffers |
 
 ## ToDos
+
+- [ ] [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
+- [ ] [nvim-surround](https://github.com/kylechui/nvim-surround)
+- [ ] [treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [ ] [trouble](https://github.com/folke/trouble.nvim)
+- [ ] [yankey](https://github.com/gbprod/yanky.nvim)
