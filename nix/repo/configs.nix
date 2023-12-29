@@ -88,7 +88,7 @@ in
             };
             conventional = {
               scopes = [];
-              types = ["fix" "feat" "chore" "ci" "docs" "style" "refactor" "test"];
+              types = ["fix" "feat" "chore" "ci" "docs" "style" "refactor" "test" "revert"];
               descriptionLength = 72;
             };
           };
