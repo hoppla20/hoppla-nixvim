@@ -21,6 +21,7 @@ in {
       neogit = {
         enable = true;
         autoRefresh = true;
+        integrations.diffview = true;
       };
 
       fugitive.enable = true;
