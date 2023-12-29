@@ -24,14 +24,13 @@ in {
       };
     }
 
-    # wait for https://github.com/nix-community/nixvim/pull/849
-    #(mkIf config.plugins.ts-context-commentstring.enable {
-    #  plugins = {
-    #    comment-nvim.preHook = "require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()";
-    #    ts-context-commentstring.extraOptions = {
-    #      enable_autocmd = false;
-    #    };
-    #  };
-    #})
+    (mkIf config.plugins.ts-context-commentstring.enable {
+      plugins = {
+        comment-nvim.preHook = "require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()";
+        ts-context-commentstring.extraOptions = {
+          enable_autocmd = false;
+        };
+      };
+    })
   ]);
 }

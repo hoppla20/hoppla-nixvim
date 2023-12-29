@@ -23,8 +23,13 @@
     };
     haumea.follows = "std/haumea";
 
+    # wait for https://github.com/nix-community/nixvim/pull/849
+    #nixvim = {
+    #  url = "github:nix-community/nixvim";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "/home/vincentcui/Workspace/neovim/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

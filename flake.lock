@@ -449,17 +449,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1703260550,
-        "narHash": "sha256-wPe+0oCgzvf9Ixscme+NUS4iRX0n/alJvt3msnu9vPA=",
-        "owner": "nix-community",
-        "repo": "nixvim",
-        "rev": "e0521dde87825e4ed16e1ac5b6df9f1b7e60af05",
-        "type": "github"
+        "dirtyRev": "4d0ba688a628a74d1a0a4dbbd194aefd9f2b063e-dirty",
+        "dirtyShortRev": "4d0ba688-dirty",
+        "lastModified": 1703786836,
+        "narHash": "sha256-tDkw/HSEUuFOsRErd2o8lwQaNbofhhhz0AldCGb/WNY=",
+        "type": "git",
+        "url": "file:///home/vincentcui/Workspace/neovim/nixvim"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "nixvim",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/vincentcui/Workspace/neovim/nixvim"
       }
     },
     "nosys": {
