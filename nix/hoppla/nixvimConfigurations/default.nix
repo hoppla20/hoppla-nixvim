@@ -51,6 +51,7 @@
           alpha.enable = true;
           undotree.enable = true;
           project-nvim.enable = true;
+          spider.enable = true;
         };
       };
     };
