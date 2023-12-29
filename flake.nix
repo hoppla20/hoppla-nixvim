@@ -23,7 +23,7 @@
     };
     haumea.follows = "std/haumea";
 
-    # wait for https://github.com/nix-community/nixvim/pull/849
+    # TODO wait for https://github.com/nix-community/nixvim/pull/849
     #nixvim = {
     #  url = "github:nix-community/nixvim";
     #  inputs.nixpkgs.follows = "nixpkgs";
