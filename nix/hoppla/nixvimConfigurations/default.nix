@@ -53,6 +53,7 @@
           project-nvim.enable = true;
           spider.enable = true;
           wilder.enable = true;
+          neorg.enable = true;
         };
       };
     };
