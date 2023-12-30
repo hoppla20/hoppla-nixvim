@@ -28,7 +28,7 @@ in {
       keymaps = [
         {
           key = "${cfg.root.leaderPrefixes.telescope}p";
-          action = ":Telescope projects projects<cr>";
+          action = ":Telescope projects<cr>";
           options = {
             silent = true;
             desc = "Telescope projects";

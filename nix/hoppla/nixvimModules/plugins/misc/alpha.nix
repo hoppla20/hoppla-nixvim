@@ -61,6 +61,11 @@ in {
               shortcut = "r";
             }
             {
+              desc = "  Open project";
+              command = ":Telescope projects<cr>";
+              shortcut = "p";
+            }
+            {
               desc = "󰗼  Quit Neovim";
               command = ":qa<cr>";
               shortcut = "q";
