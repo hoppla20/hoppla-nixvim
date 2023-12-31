@@ -52,6 +52,8 @@ in {
             config.engine = "nvim-cmp";
           };
           "core.integrations.telescope" = helpers.emptyTable;
+          "core.export" = helpers.emptyTable;
+          "core.export.markdown" = helpers.emptyTable;
           "core.keybinds" = {
             config.hook = helpers.mkRaw ''
               function(keybinds)
