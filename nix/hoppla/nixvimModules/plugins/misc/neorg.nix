@@ -43,9 +43,9 @@ in {
             config = {
               index = "index.norg";
               workspaces = {
-                notes = "~/Workspace/neorg/notes";
+                main = "~/Workspace/neorg/notes";
               };
-              default_workspace = "notes";
+              default_workspace = "main";
             };
           };
           "core.completion" = {
