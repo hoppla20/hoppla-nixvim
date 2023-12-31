@@ -10,7 +10,7 @@
     (name: module:
       lib.nameValuePair "nixvim-${name}"
       (nixvim.legacyPackages.${nixpkgs.system}.makeNixvimWithModule {
-        pkgs = nixpkgs;
+        pkgs = cell.pkgs.nixpkgs-with-neovim-nightly;
         module = {
           imports = [cell.nixvimConfigurations.${name}];
         };

@@ -21,9 +21,14 @@
   localLeaderPrefixes = {
     "insert" = "i";
     "lists" = "l";
+    "looking glass" = "L";
     "mode" = "m";
     "notes" = "n";
+    "summary" = "s";
     "todos" = "t";
+    "toc" = "T";
+    "update" = "u";
+    "return" = "q";
   };
 in {
   options = {
@@ -54,6 +59,10 @@ in {
           "core.integrations.telescope" = helpers.emptyTable;
           "core.export" = helpers.emptyTable;
           "core.export.markdown" = helpers.emptyTable;
+          "core.summary" = {
+            config.strategy = "by_path";
+          };
+          "core.ui.calendar" = helpers.emptyTable;
           "core.keybinds" = {
             config.hook = helpers.mkRaw ''
               function(keybinds)
@@ -62,6 +71,7 @@ in {
                 keybinds.map_event_to_mode("norg", {
                   n = {
                     { "<C-s>", "core.integrations.telescope.find_linkable" },
+                    { leader .. "L", "core.looking-glass.magnify-code-block" }
                   },
                   i = {
                     { "<C-l>", "core.integrations.telescope.insert_link" },
@@ -73,7 +83,11 @@ in {
 
                 keybinds.map_to_mode("all", {
                   n = {
-                    { leader .. "R", ":Neorg return<cr>", opts = { desc = "[neorg] Return" } },
+                    { leader .. "q", ":Neorg return<cr>" },
+                    { leader .. "T", ":Neorg toc<cr>" },
+                    { leader .. "im", ":Neorg inject-metadata<cr>" },
+                    { leader .. "um", ":Neorg update-metadata<cr>" },
+                    { leader .. "sg", ":Neorg generate-workspace-summary<cr>" },
                   },
                 })
               end

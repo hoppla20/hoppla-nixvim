@@ -4,6 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+
     nixago = {
       url = "github:nix-community/nixago";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +45,7 @@
         (nixago "configs")
         (devshells "shells")
 
+        (pkgs "pkgs")
         (functions "lib")
         (runnables "packages")
         (functions "nixvimModules")
