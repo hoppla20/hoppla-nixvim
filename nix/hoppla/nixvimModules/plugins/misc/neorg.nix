@@ -74,5 +74,21 @@ in {
 
       which-key.registrations = lib.mapAttrs' localLeaderKeymap localLeaderPrefixes;
     };
+
+    keymaps = let
+      neorgKeymap = key: action: {
+        key = "${cfg.root.leaderPrefixes.neorg}${key}";
+        action = ":Neorg ${action}<cr>";
+        options.desc = "Neorg ${action}";
+      };
+    in [
+      (neorgKeymap "i" "index")
+      (neorgKeymap "r" "return")
+      {
+        key = "${cfg.root.leaderPrefixes.neorg}w";
+        action = ":Neorg workspace ";
+        options.desc = "Neorg workspace";
+      }
+    ];
   };
 }

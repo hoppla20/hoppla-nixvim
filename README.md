@@ -21,6 +21,7 @@
 | <leader>g | Git |
 | <leader>l | LSP |
 | <leader>T | ToDo |
+| <leader>n | Neorg |
 
 ## Interesting
 

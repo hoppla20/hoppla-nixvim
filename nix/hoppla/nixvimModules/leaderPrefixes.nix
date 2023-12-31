@@ -18,6 +18,7 @@ _: {
     buffers = "b";
     git = "g";
     lsp = "l";
+    neorg = "n";
   };
 
   leaderPrefixOption = desc: key:
