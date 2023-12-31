@@ -55,6 +55,8 @@ in {
           "core.keybinds" = {
             config.hook = helpers.mkRaw ''
               function(keybinds)
+                local leader = keybinds.leader
+
                 keybinds.map_event_to_mode("norg", {
                   n = {
                     { "<C-s>", "core.integrations.telescope.find_linkable" },
@@ -66,6 +68,12 @@ in {
                   silent = true,
                   noremap = true,
                 })
+
+                keybinds.map_to_mode("all", {
+                  n = {
+                    { leader .. "R", ":Neorg return<cr>", opts = { desc = "[neorg] Return" } },
+                  },
+                })
               end
             '';
           };
@@ -76,14 +84,13 @@ in {
     };
 
     keymaps = let
-      neorgKeymap = key: action: {
-        key = "${cfg.root.leaderPrefixes.neorg}${key}";
-        action = ":Neorg ${action}<cr>";
-        options.desc = "Neorg ${action}";
-      };
+      leader = cfg.root.leaderPrefixes.neorg;
     in [
-      (neorgKeymap "i" "index")
-      (neorgKeymap "r" "return")
+      {
+        key = "${leader}i";
+        action = ":Neorg index<cr>";
+        options.desc = "Neorg index";
+      }
       {
         key = "${cfg.root.leaderPrefixes.neorg}w";
         action = ":Neorg workspace ";
