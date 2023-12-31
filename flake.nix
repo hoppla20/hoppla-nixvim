@@ -29,7 +29,7 @@
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
     nixvim = {
-      url = "/home/vincentcui/Workspace/neovim/nixvim";
+      url = "github:hoppla20/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
