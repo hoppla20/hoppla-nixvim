@@ -38,6 +38,14 @@ in {
           desc = "Open neogit";
         };
       }
+      {
+        key = "${cfg.root.leaderPrefixes.git}G";
+        action = ":Git<cr>";
+        options = {
+          silent = true;
+          desc = "Open fugitive";
+        };
+      }
     ];
   };
 }
