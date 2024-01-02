@@ -19,6 +19,7 @@
 
       languages = {
         nix.enable = true;
+        terraform.enable = true;
       };
 
       plugins = {
