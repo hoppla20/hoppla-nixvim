@@ -3,12 +3,20 @@ _: {
   lib,
   cfg,
   ...
-}: {
+}: let
+  inherit
+    (lib)
+    mkOption
+    mkEnableOption
+    mkIf
+    types
+    ;
+in {
   options = {
-    enable = lib.mkEnableOption "nix";
+    enable = mkEnableOption "nix";
   };
 
-  config = lib.mkIf cfg.self.enable {
+  config = mkIf cfg.self.enable {
     plugins = {
       nix.enable = true;
 
