@@ -27,6 +27,11 @@ in {
           formatting.command = ["alejandra"];
         };
       };
+
+      none-ls.sources = {
+        code_actions.statix.enable = true;
+        diagnostics.statix.enable = true;
+      };
     };
   };
 }

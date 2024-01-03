@@ -58,12 +58,6 @@ in {
       none-ls = {
         enable = true;
         enableLspFormat = true;
-        sources = {
-          diagnostics = {
-            shellcheck.enable = true;
-            statix.enable = true;
-          };
-        };
       };
     };
 
