@@ -48,7 +48,10 @@ in {
         lightbulb.enable = false;
       };
 
-      lsp-lines.enable = true;
+      lsp-lines = {
+        enable = true;
+        currentLine = true;
+      };
 
       lsp-format = {
         enable = true;
