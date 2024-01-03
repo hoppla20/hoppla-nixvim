@@ -20,6 +20,7 @@
       languages = {
         nix.enable = true;
         terraform.enable = true;
+        bash.enable = true;
       };
 
       plugins = {
