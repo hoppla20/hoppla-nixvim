@@ -21,6 +21,7 @@
         nix.enable = true;
         terraform.enable = true;
         bash.enable = true;
+        dockerfile.enable = true;
       };
 
       plugins = {
