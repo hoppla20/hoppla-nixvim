@@ -20,7 +20,7 @@
       languages = {
         nix.enable = true;
         terraform.enable = true;
-        bash.enable = true;
+        shell.enable = true;
         dockerfile.enable = true;
       };
 

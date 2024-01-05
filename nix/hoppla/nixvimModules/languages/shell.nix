@@ -18,9 +18,11 @@ in {
   config = {
     plugins = {
       lsp.servers.bashls.enable = true;
+
       none-ls.sources = {
         code_actions.shellcheck.enable = true;
         diagnostics.shellcheck.enable = true;
+        formatting.shfmt.enable = true;
       };
     };
   };
