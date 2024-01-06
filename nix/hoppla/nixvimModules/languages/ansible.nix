@@ -19,5 +19,7 @@ in {
     hoppla.languages.yaml.enable = true;
 
     plugins.lsp.servers.ansiblels.enable = true;
+
+    extraPlugins = [nixpkgs.vimPlugins.ansible-vim];
   };
 }
