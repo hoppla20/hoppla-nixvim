@@ -18,10 +18,7 @@
     types
     ;
 
-  inherit
-    (nixvim.lib)
-    helpers
-    ;
+  inherit (nixvim.lib) helpers;
 in {
   options = {
     enable = mkEnableOption "nvim-cmp";
@@ -41,7 +38,7 @@ in {
           "<C-b>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-g>" = "cmp.mapping.abort()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<CR>" = "cmp.mapping.confirm()";
         };
         snippet.expand = "luasnip";
         sources = mkOrder 1000 [
