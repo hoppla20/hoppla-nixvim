@@ -16,6 +16,6 @@ in {
   };
 
   config = mkIf cfg.self.enable {
-    plugins.lsp.servers.terraform_lsp.enable = true;
+    plugins.lsp.servers.terraformls.enable = true;
   };
 }
