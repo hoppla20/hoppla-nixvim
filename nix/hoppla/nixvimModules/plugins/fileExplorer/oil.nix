@@ -27,8 +27,10 @@ in {
         keymaps = {
           "q" = "actions.close";
           "gr" = "actions.refresh";
-          "h" = "actions.parent";
-          "l" = "actions.select";
+          "H" = "actions.parent";
+          "L" = "actions.select";
+          "J" = "j";
+          "K" = "k";
         };
       };
 
