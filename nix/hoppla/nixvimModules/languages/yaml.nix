@@ -12,10 +12,10 @@ _: {
     ;
 in {
   options = {
-    enable = mkEnableOption "terraform";
+    enable = mkEnableOption "yaml";
   };
 
   config = mkIf cfg.self.enable {
-    plugins.lsp.servers.terraform_lsp.enable = true;
+    plugins.lsp.servers.yamlls.enable = true;
   };
 }

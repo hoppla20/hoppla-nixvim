@@ -22,6 +22,9 @@
         terraform.enable = true;
         shell.enable = true;
         dockerfile.enable = true;
+        ruby.enable = true;
+        yaml.enable = true;
+        ansible.enable = true;
       };
 
       plugins = {

@@ -1,4 +1,4 @@
-_: {
+{nixpkgs}: {
   lib,
   cfg,
   ...
@@ -12,10 +12,12 @@ _: {
     ;
 in {
   options = {
-    enable = mkEnableOption "terraform";
+    enable = mkEnableOption "ansible";
   };
 
   config = mkIf cfg.self.enable {
-    plugins.lsp.servers.terraform_lsp.enable = true;
+    hoppla.languages.yaml.enable = true;
+
+    plugins.lsp.servers.ansiblels.enable = true;
   };
 }
