@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "anki-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1695466032,
+        "narHash": "sha256-yQ/8dKqSjrxtskwQ0T5BKtYDth96+/D+Y43YfuufsPI=",
+        "owner": "rareitems",
+        "repo": "anki.nvim",
+        "rev": "dc1263a5b7938c06be9370b2b5629f7bd7ea0133",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rareitems",
+        "repo": "anki.nvim",
+        "type": "github"
+      }
+    },
     "blank": {
       "locked": {
         "lastModified": 1625557891,
@@ -932,6 +948,7 @@
     },
     "root": {
       "inputs": {
+        "anki-nvim": "anki-nvim",
         "devshell": "devshell",
         "haumea": [
           "std",

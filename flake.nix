@@ -35,6 +35,11 @@
       url = "github:hoppla20/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    anki-nvim = {
+      url = "github:rareitems/anki.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {std, ...}:

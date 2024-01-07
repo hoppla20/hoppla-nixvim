@@ -44,6 +44,7 @@
         utils = {
           git.enable = true;
           direnv.enable = true;
+          anki-nvim.enable = true;
         };
 
         misc = {
