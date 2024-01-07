@@ -62,7 +62,8 @@ in {
       };
     in [
       (barbarMap "<M-S-q>" "BufferClose!")
-      (barbarMap "<M-S-q>" "BufferCloseAllButCurrentOrPinned")
+      (barbarMap "${cfg.root.leaderPrefixes.buffers}q" "BufferClose")
+      (barbarMap "${cfg.root.leaderPrefixes.buffers}Q" "BufferCloseAllButCurrentOrPinned")
       (barbarMap "${cfg.root.leaderPrefixes.buffers}r" "BufferRestore")
     ];
   };
