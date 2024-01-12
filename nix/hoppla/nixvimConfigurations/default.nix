@@ -25,6 +25,7 @@
         ruby.enable = true;
         yaml.enable = true;
         ansible.enable = true;
+        python.enable = true;
       };
 
       plugins = {
