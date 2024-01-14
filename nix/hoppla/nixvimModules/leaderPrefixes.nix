@@ -19,6 +19,7 @@ _: {
     git = "g";
     lsp = "l";
     neorg = "n";
+    images = "i";
   };
 
   leaderPrefixOption = desc: key:

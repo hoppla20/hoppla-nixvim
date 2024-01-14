@@ -64,6 +64,7 @@
           spider.enable = true;
           wilder.enable = true;
           neorg.enable = true;
+          clipboard-image-nvim.enable = true;
         };
       };
     };
