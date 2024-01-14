@@ -49,6 +49,7 @@ in {
               index = "index.norg";
               workspaces = {
                 notes = "~/Sync/default/neorg/notes";
+                uni = "~/Storage/nextcloud/Documents/Studium";
               };
               default_workspace = "notes";
             };
@@ -109,8 +110,8 @@ in {
       }
       {
         key = "${cfg.root.leaderPrefixes.neorg}w";
-        action = ":Neorg workspace ";
-        options.desc = "Neorg workspace";
+        action = ":Telescope neorg switch_workspace<cr>";
+        options.desc = "Neorg switch workspace";
       }
     ];
   };
