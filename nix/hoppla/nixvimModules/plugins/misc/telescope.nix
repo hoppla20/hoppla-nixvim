@@ -28,10 +28,10 @@ in {
           desc = "Telescope ${action}";
         };
       in {
-        "<C-p>" = actionWithDesc "git_files";
-        "${cfg.root.leaderPrefixes.files}f" = "git_files";
-        "<M-p>" = actionWithDesc "find_files";
-        "${cfg.root.leaderPrefixes.files}F" = "find_files";
+        "<C-p>" = actionWithDesc "find_files";
+        "${cfg.root.leaderPrefixes.files}f" = actionWithDesc "find_files";
+        "<M-p>" = actionWithDesc "git_files";
+        "${cfg.root.leaderPrefixes.files}F" = actionWithDesc "git_files";
 
         "${cfg.root.leaderPrefixes.search}r" = actionWithDesc "live_grep";
         "${cfg.root.leaderPrefixes.buffers}f" = actionWithDesc "buffers";

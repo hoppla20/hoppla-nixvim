@@ -20,7 +20,7 @@ in {
     {
       plugins.project-nvim = {
         enable = true;
-        patterns = [".git" "flake.nix" "Makefile"];
+        patterns = [".git" "flake.nix" "Makefile" ".project-root"];
       };
     }
     (mkIf cfg.root.plugins.misc.telescope.enable {
