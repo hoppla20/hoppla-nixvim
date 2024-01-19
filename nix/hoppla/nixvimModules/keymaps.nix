@@ -9,5 +9,25 @@ _: {cfg, ...}: {
         desc = "nohlsearch";
       };
     }
+    {
+      key = "<pageup>";
+      action = "<C-u>";
+      options.silent = true;
+    }
+    {
+      key = "<pagedown>";
+      action = "<C-d>";
+      options.silent = true;
+    }
+    {
+      key = "<home>";
+      action = "^";
+      options.silent = true;
+    }
+    {
+      key = "<end>";
+      action = "$";
+      options.silent = true;
+    }
   ];
 }

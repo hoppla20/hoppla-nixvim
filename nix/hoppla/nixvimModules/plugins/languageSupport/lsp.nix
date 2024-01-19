@@ -73,8 +73,8 @@ in {
       };
     in [
       (actionWithDesc "K" "hover_doc")
-      (actionWithDesc "<leader>j" "diagnostic_jump_next")
-      (actionWithDesc "<leader>k" "diagnostic_jump_prev")
+      (actionWithDesc "${prefix}j" "diagnostic_jump_next")
+      (actionWithDesc "${prefix}k" "diagnostic_jump_prev")
       (actionWithDesc "${prefix}a" "code_action")
       (actionWithDesc "${prefix}f" "finder")
       (actionWithDesc "${prefix}d" "peek_definition")
