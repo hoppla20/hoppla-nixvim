@@ -28,9 +28,9 @@ in {
           enable = true;
           keymaps = {
             initSelection = "<CR>";
-            scopeIncremental = "<CR>";
-            nodeIncremental = "<TAB>";
-            nodeDecremental = "<S-TAB>";
+            scopeIncremental = "<TAB>";
+            nodeIncremental = "<CR>";
+            nodeDecremental = "<S-CR>";
           };
         };
       };

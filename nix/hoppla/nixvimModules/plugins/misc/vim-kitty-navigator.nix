@@ -40,6 +40,26 @@ in {
         action = ":KittyNavigateRight<cr>";
         options.silent = true;
       }
+      {
+        key = "<M-n>";
+        action = ":KittyNavigateDown<cr>";
+        options.silent = true;
+      }
+      {
+        key = "<M-e>";
+        action = ":KittyNavigateUp<cr>";
+        options.silent = true;
+      }
+      {
+        key = "<M-p>";
+        action = ":KittyNavigateLeft<cr>";
+        options.silent = true;
+      }
+      {
+        key = "<M-a>";
+        action = ":KittyNavigateRight<cr>";
+        options.silent = true;
+      }
     ];
   };
 }

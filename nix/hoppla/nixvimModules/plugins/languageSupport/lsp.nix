@@ -28,24 +28,19 @@ in {
           # disable default lsp diagnostic keymaps
           # use lspsaga
           diagnostic = {};
-          lspBuf = {
+          lspBuf = let
+            prefix = cfg.root.leaderPrefixes.lsp;
+          in {
+            "K" = "hover";
             "gD" = "references";
             "gd" = "definition";
             "gi" = "implementation";
             "gt" = "type_definition";
-            "${cfg.root.leaderPrefixes.lsp}f" = "format";
+            "${prefix}f" = "format";
+            "${prefix}a" = "code_action";
+            "${prefix}r" = "rename";
           };
         };
-      };
-
-      # https://nvimdev.github.io/lspsaga/
-      lspsaga = {
-        enable = true;
-        definition = {
-          width = 0.618;
-          height = 0.618;
-        };
-        lightbulb.enable = false;
       };
 
       lsp-lines = {
@@ -63,26 +58,5 @@ in {
         enableLspFormat = true;
       };
     };
-
-    keymaps = let
-      prefix = cfg.root.leaderPrefixes.lsp;
-      actionWithDesc = key: action: {
-        inherit key;
-        action = ":Lspsaga ${action}<cr>";
-        options.desc = "Lspsaga ${action}";
-      };
-    in [
-      (actionWithDesc "K" "hover_doc")
-      (actionWithDesc "${prefix}j" "diagnostic_jump_next")
-      (actionWithDesc "${prefix}k" "diagnostic_jump_prev")
-      (actionWithDesc "${prefix}a" "code_action")
-      (actionWithDesc "${prefix}f" "finder")
-      (actionWithDesc "${prefix}d" "peek_definition")
-      (actionWithDesc "${prefix}t" "peek_type_definition")
-      (actionWithDesc "${prefix}r" "rename")
-      (actionWithDesc "${prefix}o" "outline")
-      (actionWithDesc "${prefix}h" "incoming_calls")
-      (actionWithDesc "${prefix}H" "outgoing_calls")
-    ];
   };
 }

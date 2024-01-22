@@ -2,14 +2,15 @@
   config = {
     globals = {
       mapleader = " ";
-      maplocalleader = ",";
+      maplocalleader = "\\";
     };
 
     options = {
       number = true;
       relativenumber = true;
       wrap = false;
-      foldenable = false; # enable folding by using 'zc'
+      foldenable = true;
+      foldlevel = 99;
     };
 
     clipboard.providers.wl-copy.enable = true;
@@ -37,7 +38,7 @@
         completion.nvim-cmp.enable = true;
 
         fileExplorer = {
-          #vim-vinegar.enable = true;
+          # vim-vinegar.enable = true;
           oil.enable = true;
           nvim-tree.enable = true;
         };
@@ -45,15 +46,21 @@
         utils = {
           git.enable = true;
           direnv.enable = true;
-          #anki-nvim.enable = true;
+          # anki-nvim.enable = true;
           markdown-preview.enable = true;
+        };
+
+        ui = {
+          rainbow-delimiters.enable = true;
+          # wilder.enable = true;
+          noice.enable = true;
+          notify.enable = true;
         };
 
         misc = {
           lines.enable = true;
           telescope.enable = true;
           nvim-autopairs.enable = true;
-          rainbow-delimiters.enable = true;
           todo-comments.enable = true;
           which-key.enable = true;
           vim-kitty-navigator.enable = true;
@@ -62,16 +69,16 @@
           undotree.enable = true;
           project-nvim.enable = true;
           spider.enable = true;
-          wilder.enable = true;
           neorg.enable = true;
           clipboard-image-nvim.enable = true;
-          easymotion.enable = true;
+          # easymotion.enable = true;
+          leap.enable = true;
         };
       };
     };
 
     # regex match groups
-    #match = {};
+    # match = {};
 
     # extra options
 

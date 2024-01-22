@@ -20,6 +20,7 @@ _: {
     lsp = "l";
     neorg = "n";
     images = "i";
+    messages = "m";
   };
 
   leaderPrefixOption = desc: key:

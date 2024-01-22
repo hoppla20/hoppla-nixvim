@@ -31,30 +31,86 @@ in {
       nvim-cmp = {
         enable = true;
         completion.keywordLength = 3;
+        mappingPresets = [];
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
-          "<S-down>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
-          "<S-up>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
-          "<C-left>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-right>" = "cmp.mapping.scroll_docs(4)";
+          "<C-j>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
+          "<C-k>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
+          "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
+          "<C-e>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
+          "<C-h>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-l>" = "cmp.mapping.scroll_docs(4)";
+          "<C-p>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-a>" = "cmp.mapping.scroll_docs(4)";
           "<C-g>" = "cmp.mapping.abort()";
-          "<ESC>" = "cmp.mapping.abort()";
           "<CR>" = "cmp.mapping.confirm()";
         };
         snippet.expand = "luasnip";
         sources = mkOrder 1000 [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "buffer";}
           {
             name = "async_path";
             option.trailing_slash = true;
           }
-          {name = "conventionalcommits";}
+          {name = "nvim_lsp";}
+          {name = "luasnip";}
+          {name = "buffer";}
         ];
+        window = {
+          completion = {
+            border = "rounded";
+          };
+        };
       };
     };
 
-    extraPlugins = [nixpkgs.vimPlugins.cmp-async-path];
+    extraPlugins = builtins.attrValues {
+      inherit
+        (nixpkgs.vimPlugins)
+        cmp-async-path
+        cmp-cmdline
+        cmp-conventionalcommits
+        cmp-git
+        ;
+    };
+
+    extraConfigLuaPost = helpers.wrapDo ''
+      local cmp = require('cmp')
+
+      cmp.setup.filetype('gitcommit', {
+        sources = cmp.config.sources({
+          { name = 'git' },
+          { name = 'conventionalcommits' }
+        }, {
+          { name = 'buffer' },
+        })
+      })
+
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        completion = {
+          keyword_length = 1,
+        },
+        sources = cmp.config.sources({
+          { name = 'buffer' }
+        })
+      })
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        completion = {
+          keyword_length = 1,
+        },
+        sources = cmp.config.sources({
+          {
+            name = 'async_path',
+            option = {
+              trailing_slash = false,
+            },
+          },
+        }, {
+          { name = 'cmdline' },
+        })
+      })
+    '';
   };
 }
