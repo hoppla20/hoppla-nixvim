@@ -60,6 +60,17 @@ in {
             border = "rounded";
           };
         };
+        extraOptions.sorting.comparators = [
+          (helpers.mkRaw "require('cmp_fuzzy_buffer.compare')")
+          (helpers.mkRaw "require('cmp.config.compare').offset")
+          (helpers.mkRaw "require('cmp.config.compare').exact")
+          (helpers.mkRaw "require('cmp.config.compare').score")
+          (helpers.mkRaw "require('cmp.config.compare').recently_used")
+          (helpers.mkRaw "require('cmp.config.compare').locality")
+          (helpers.mkRaw "require('cmp.config.compare').kind")
+          (helpers.mkRaw "require('cmp.config.compare').length")
+          (helpers.mkRaw "require('cmp.config.compare').order")
+        ];
       };
     };
 
@@ -68,7 +79,7 @@ in {
         (nixpkgs.vimPlugins)
         cmp-async-path
         cmp-cmdline
-        cmp-conventionalcommits
+        cmp-fuzzy-buffer
         cmp-git
         ;
     };
@@ -79,7 +90,6 @@ in {
       cmp.setup.filetype('gitcommit', {
         sources = cmp.config.sources({
           { name = 'git' },
-          { name = 'conventionalcommits' }
         }, {
           { name = 'buffer' },
         })
@@ -91,7 +101,7 @@ in {
           keyword_length = 1,
         },
         sources = cmp.config.sources({
-          { name = 'buffer' }
+          { name = 'fuzzy_buffer' }
         })
       })
 
@@ -104,7 +114,7 @@ in {
           {
             name = 'async_path',
             option = {
-              trailing_slash = false,
+              trailing_slash = true,
             },
           },
         }, {
