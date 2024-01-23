@@ -11,6 +11,8 @@
       wrap = false;
       foldenable = true;
       foldlevel = 99;
+      splitright = true;
+      splitbelow = true;
     };
 
     clipboard.providers.wl-copy.enable = true;
@@ -48,6 +50,7 @@
           direnv.enable = true;
           # anki-nvim.enable = true;
           markdown-preview.enable = true;
+          zoxide.enable = true;
         };
 
         ui = {
@@ -64,15 +67,17 @@
           todo-comments.enable = true;
           which-key.enable = true;
           vim-kitty-navigator.enable = true;
+          kitty-runner-nvim.enable = true;
           comment-nvim.enable = true;
           alpha.enable = true;
           undotree.enable = true;
           project-nvim.enable = true;
           spider.enable = true;
-          neorg.enable = true;
+          # neorg.enable = true;
           clipboard-image-nvim.enable = true;
           # easymotion.enable = true;
           leap.enable = true;
+          scope.enable = true;
         };
       };
     };

@@ -467,6 +467,22 @@
         "type": "github"
       }
     },
+    "kitty-runner-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1694959204,
+        "narHash": "sha256-noGyluy9v0W1jL98evIFfQI0wja8RhsohQkXBk2mOHo=",
+        "owner": "jghauser",
+        "repo": "kitty-runner.nvim",
+        "rev": "8d2e37a9e66ccf89d7f1334b647059f70bfd3b93",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jghauser",
+        "repo": "kitty-runner.nvim",
+        "type": "github"
+      }
+    },
     "lib": {
       "locked": {
         "lastModified": 1702774034,
@@ -954,6 +970,7 @@
           "std",
           "haumea"
         ],
+        "kitty-runner-nvim": "kitty-runner-nvim",
         "neorg-overlay": "neorg-overlay",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixago": "nixago",

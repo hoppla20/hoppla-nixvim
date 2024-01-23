@@ -1,6 +1,6 @@
 # https://nix-community.github.io/nixvim/plugins/telescope
 # https://github.com/nvim-telescope/telescope.nvim
-_: {
+{nixvim}: {
   lib,
   cfg,
   ...
@@ -12,6 +12,8 @@ _: {
     mkIf
     types
     ;
+
+  inherit (nixvim.lib) helpers;
 in {
   options = {
     enable = mkEnableOption "telescope";
@@ -22,6 +24,19 @@ in {
       enable = true;
 
       extensions.fzf-native.enable = true;
+
+      extraOptions = {
+        pickers.buffers = {
+          mappings = {
+            n = {
+              "<C-q>" = helpers.mkRaw "require('telescope.actions').delete_buffer";
+            };
+            i = {
+              "<C-q>" = helpers.mkRaw "require('telescope.actions').delete_buffer";
+            };
+          };
+        };
+      };
 
       keymapsSilent = true;
       keymaps = let
@@ -36,19 +51,18 @@ in {
         "${cfg.root.leaderPrefixes.files}F" = actionWithDesc "git_files";
 
         "${cfg.root.leaderPrefixes.search}r" = actionWithDesc "live_grep";
-        "${cfg.root.leaderPrefixes.buffers}f" = actionWithDesc "buffers";
-        "${cfg.root.leaderPrefixes.files}o" = actionWithDesc "oldfiles";
+        "${cfg.root.leaderPrefixes.search}f" = actionWithDesc "current_buffer_fuzzy_find";
+        "${cfg.root.leaderPrefixes.buffers}b" = actionWithDesc "buffers";
+        "${cfg.root.leaderPrefixes.files}r" = actionWithDesc "oldfiles";
         "${cfg.root.leaderPrefixes.git}b" = actionWithDesc "git_branches";
 
         "${cfg.root.leaderPrefixes.telescope}c" = actionWithDesc "commands";
         "${cfg.root.leaderPrefixes.telescope}m" = actionWithDesc "marks";
         "${cfg.root.leaderPrefixes.telescope}M" = actionWithDesc "man_pages";
         "${cfg.root.leaderPrefixes.telescope}o" = actionWithDesc "vim_options";
-        "${cfg.root.leaderPrefixes.telescope}a" = actionWithDesc "autocommands";
-        "${cfg.root.leaderPrefixes.telescope}f" = actionWithDesc "current_buffer_fuzzy_find";
-        "${cfg.root.leaderPrefixes.telescope}r" = actionWithDesc "resume";
-        "${cfg.root.leaderPrefixes.telescope}P" = actionWithDesc "pickers";
+        "${cfg.root.leaderPrefixes.telescope}T" = actionWithDesc "resume";
         "${cfg.root.leaderPrefixes.telescope}k" = actionWithDesc "keymaps";
+        "${cfg.root.leaderPrefixes.telescope}h" = actionWithDesc "help_tags";
       };
     };
   };

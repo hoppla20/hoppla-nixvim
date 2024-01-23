@@ -13,14 +13,16 @@ _: {
 
   prefixDefaults = {
     search = "s";
-    telescope = "t";
+    terminal = "t";
+    telescope = "T";
     files = "f";
     buffers = "b";
     git = "g";
     lsp = "l";
-    neorg = "n";
+    # neorg = "n";
     images = "i";
     messages = "m";
+    zoxide = "z";
   };
 
   leaderPrefixOption = desc: key:

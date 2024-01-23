@@ -19,7 +19,9 @@ in {
   config = mkIf cfg.self.enable {
     plugins.nvim-tree = {
       enable = true;
+      autoClose = true;
       hijackCursor = true;
+      hijackNetrw = false;
       reloadOnBufenter = true;
       syncRootWithCwd = true;
       respectBufCwd = true;

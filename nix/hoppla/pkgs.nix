@@ -22,6 +22,11 @@ in rec {
               '';
               src = inputs.anki-nvim;
             };
+
+            kitty-runner-nvim = nixpkgs.vimUtils.buildVimPlugin {
+              name = "kitty-runner-nvim";
+              src = inputs.kitty-runner-nvim;
+            };
           };
       })
     ];

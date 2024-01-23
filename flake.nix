@@ -40,6 +40,11 @@
       url = "github:rareitems/anki.nvim";
       flake = false;
     };
+
+    kitty-runner-nvim = {
+      url = "github:jghauser/kitty-runner.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {std, ...}:
