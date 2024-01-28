@@ -21,6 +21,7 @@ in {
       plugins.project-nvim = {
         enable = true;
         patterns = [".git" "flake.nix" "Makefile" ".project-root"];
+        scopeChdir = "tab";
       };
     }
     (mkIf cfg.root.plugins.misc.telescope.enable {

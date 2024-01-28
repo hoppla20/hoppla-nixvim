@@ -41,8 +41,9 @@
 
         fileExplorer = {
           # vim-vinegar.enable = true;
+          # nvim-tree.enable = true;
           oil.enable = true;
-          nvim-tree.enable = true;
+          ranger-nvim.enable = true;
         };
 
         utils = {
@@ -55,6 +56,7 @@
 
         ui = {
           rainbow-delimiters.enable = true;
+          indent-blankline.enable = true;
           # wilder.enable = true;
           noice.enable = true;
           notify.enable = true;

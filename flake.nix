@@ -45,6 +45,11 @@
       url = "github:jghauser/kitty-runner.nvim";
       flake = false;
     };
+
+    ranger-nvim = {
+      url = "github:kelly-lin/ranger.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {std, ...}:

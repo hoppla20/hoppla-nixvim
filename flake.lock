@@ -962,6 +962,22 @@
         "type": "github"
       }
     },
+    "ranger-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693027419,
+        "narHash": "sha256-ZCPxBF+2LsjkztdaBLxqubZiKU8MxO+J1+AbyGqKMrc=",
+        "owner": "kelly-lin",
+        "repo": "ranger.nvim",
+        "rev": "5df4122f51b8fd07c7cadee9f2134059c93c89c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kelly-lin",
+        "repo": "ranger.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "anki-nvim": "anki-nvim",
@@ -976,6 +992,7 @@
         "nixago": "nixago",
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
+        "ranger-nvim": "ranger-nvim",
         "std": "std"
       }
     },

@@ -43,9 +43,19 @@ in {
         inherit (cfg.self.flavours) dark;
         inherit (cfg.self.flavours) light;
       };
-      dimInactive = {
-        enabled = true;
-        percentage = 0.15;
+      integrations = {
+        cmp = true;
+        native_lsp.enabled = true;
+        neotree = true;
+        noice = true;
+        notify = true;
+        telescope.enabled = true;
+        treesitter = true;
+        treesitter_context = true;
+        indent_blankline = {
+          enabled = true;
+          scope_color = "lavender";
+        };
       };
     };
   };

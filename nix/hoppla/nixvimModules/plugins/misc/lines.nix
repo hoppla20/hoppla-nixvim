@@ -28,6 +28,7 @@ in {
       lualine = {
         enable = true;
         theme = "catppuccin";
+        globalstatus = true;
       };
     };
 

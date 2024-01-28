@@ -27,6 +27,11 @@ in rec {
               name = "kitty-runner-nvim";
               src = inputs.kitty-runner-nvim;
             };
+
+            ranger-nvim = nixpkgs.vimUtils.buildVimPlugin {
+              name = "ranger-nvim";
+              src = inputs.ranger-nvim;
+            };
           };
       })
     ];

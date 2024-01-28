@@ -74,5 +74,13 @@ in {
         }
       ];
     };
+
+    keymaps = [
+      {
+        key = "<leader><enter>";
+        action = ":tabnew | Alpha<cr>";
+        options.silent = true;
+      }
+    ];
   };
 }
