@@ -27,8 +27,6 @@ in {
         keymaps = {
           "q" = "actions.close";
           "gr" = "actions.refresh";
-          "<left>" = "actions.parent";
-          "<right>" = "actions.select";
         };
       };
 
