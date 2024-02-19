@@ -4,6 +4,7 @@
 }: {
   lib,
   cfg,
+  helpers,
   ...
 }: let
   inherit
@@ -14,8 +15,6 @@
     mkMerge
     types
     ;
-
-  inherit (nixvim.lib) helpers;
 in {
   options = {
     enable = mkEnableOption "scope";

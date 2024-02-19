@@ -4,6 +4,7 @@
 }: {
   lib,
   cfg,
+  helpers,
   ...
 }: let
   inherit
@@ -13,8 +14,6 @@
     mkIf
     types
     ;
-
-  inherit (nixvim.lib) helpers;
 
   boolToInt = bool:
     if bool

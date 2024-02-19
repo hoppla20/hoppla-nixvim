@@ -1,6 +1,7 @@
 _: {
   lib,
   cfg,
+  helpers,
   ...
 }: let
   inherit
@@ -30,12 +31,12 @@ in {
             position = "center";
           };
           val = [
-            "  ███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗  "
-            "  ████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║  "
-            "  ██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║  "
-            "  ██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║  "
-            "  ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║  "
-            "  ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝  "
+            "███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗"
+            "████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║"
+            "██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║"
+            "██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║"
+            "██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
+            "╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
           ];
         }
         {
@@ -44,31 +45,44 @@ in {
         }
         {
           type = "group";
-          val = [
+          val = let
+            buttonOpts = {
+              position = "center";
+              cursor = 3;
+              width = 50;
+              align_shortcut = "right";
+              hl_shortcut = "Keyword";
+            };
+          in [
             {
-              desc = "󰈔  New file";
-              command = ":ene<cr>";
-              shortcut = "e";
+              type = "button";
+              val = "󰈞  Find file";
+              on_press = helpers.mkRaw "function() vim.cmd[[Telescope find_files]] end";
+              opts = buttonOpts // {shortcut = "󱁐 f f";};
             }
             {
-              desc = "󰈞  Find file";
-              command = ":Telescope find_files<cr>";
-              shortcut = "f";
+              type = "button";
+              val = "  Recent files";
+              on_press = helpers.mkRaw "function() vim.cmd[[Telescope oldfiles]] end";
+              opts = buttonOpts // {shortcut = "󱁐 f r";};
             }
             {
-              desc = "  Recent files";
-              command = ":Telescope oldfiles<cr>";
-              shortcut = "r";
+              type = "button";
+              val = "  Open project";
+              on_press = helpers.mkRaw "function() vim.cmd[[Telescope projects]] end";
+              opts = buttonOpts // {shortcut = "󱁐 T p";};
             }
             {
-              desc = "  Open project";
-              command = ":Telescope projects<cr>";
-              shortcut = "p";
+              type = "button";
+              val = "󰈔  New file";
+              on_press = helpers.mkRaw "function() vim.cmd[[ene]] end";
+              opts = buttonOpts // {shortcut = ":ene ";};
             }
             {
-              desc = "󰗼  Quit Neovim";
-              command = ":qa<cr>";
-              shortcut = "q";
+              type = "button";
+              val = "󰗼  Quit Neovim";
+              on_press = helpers.mkRaw "function() vim.cmd[[qa]] end";
+              opts = buttonOpts // {shortcut = ":qa ";};
             }
           ];
         }

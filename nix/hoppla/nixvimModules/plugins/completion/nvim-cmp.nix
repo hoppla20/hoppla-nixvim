@@ -7,6 +7,7 @@
   options,
   lib,
   cfg,
+  helpers,
   ...
 }: let
   inherit
@@ -17,8 +18,6 @@
     mkOrder
     types
     ;
-
-  inherit (nixvim.lib) helpers;
 in {
   options = {
     enable = mkEnableOption "nvim-cmp";

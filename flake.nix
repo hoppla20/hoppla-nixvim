@@ -2,7 +2,9 @@
   description = "Hoppla Nixvim configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # TODO Wait until https://github.com/nix-community/nixvim/issues/1112 is resolved
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
@@ -17,22 +19,17 @@
     };
 
     std = {
-      url = "github:divnix/std";
+      url = "github:divnix/std/v0.31.0";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        # nixpkgs.follows = "nixpkgs";
         nixago.follows = "nixago";
         devshell.follows = "devshell";
       };
     };
     haumea.follows = "std/haumea";
 
-    # TODO wait for https://github.com/nix-community/nixvim/pull/849
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     nixvim = {
-      url = "github:hoppla20/nixvim";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

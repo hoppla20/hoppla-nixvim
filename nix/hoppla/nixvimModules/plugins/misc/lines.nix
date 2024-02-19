@@ -7,6 +7,7 @@
   lib,
   config,
   cfg,
+  helpers,
   ...
 }: let
   inherit
@@ -16,8 +17,6 @@
     mkIf
     types
     ;
-
-  inherit (nixvim.lib) helpers;
 in {
   options = {
     enable = mkEnableOption "Lines";

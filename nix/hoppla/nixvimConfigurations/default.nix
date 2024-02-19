@@ -13,6 +13,7 @@
       foldlevel = 99;
       splitright = true;
       splitbelow = true;
+      conceallevel = 2;
     };
 
     clipboard.providers.wl-copy.enable = true;
@@ -52,6 +53,7 @@
           # anki-nvim.enable = true;
           markdown-preview.enable = true;
           zoxide.enable = true;
+          obsidian.enable = true;
         };
 
         ui = {
