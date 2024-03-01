@@ -30,6 +30,7 @@
         yaml.enable = true;
         ansible.enable = true;
         python.enable = true;
+        markdown.enable = true;
       };
 
       plugins = {
