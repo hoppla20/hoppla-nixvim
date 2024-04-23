@@ -24,7 +24,22 @@ in {
 
       extensions.fzf-native.enable = true;
 
-      extraOptions = {
+      settings = {
+        defaults = {
+          vimgrep_arguments = [
+            "rg"
+            "--color=never"
+            "--no-heading"
+            "--with-filename"
+            "--line-number"
+            "--column"
+            "--smart-case"
+            "--hidden"
+            "--glob"
+            "!{**/.git/*,**/node_modules/*,**/result/*}"
+          ];
+        };
+
         pickers.buffers = {
           mappings = {
             n = {
@@ -41,13 +56,13 @@ in {
       keymaps = let
         actionWithDesc = action: {
           inherit action;
-          desc = "Telescope ${action}";
+          options.desc = "Telescope ${action}";
         };
       in {
-        "<C-p>" = actionWithDesc "find_files";
-        "${cfg.root.leaderPrefixes.files}f" = actionWithDesc "find_files";
-        "<M-p>" = actionWithDesc "git_files";
-        "${cfg.root.leaderPrefixes.files}F" = actionWithDesc "git_files";
+        "<C-p>" = actionWithDesc "git_files";
+        "${cfg.root.leaderPrefixes.files}f" = actionWithDesc "git_files";
+        "<M-p>" = actionWithDesc "find_files";
+        "${cfg.root.leaderPrefixes.files}F" = actionWithDesc "find_files";
 
         "${cfg.root.leaderPrefixes.search}r" = actionWithDesc "live_grep";
         "${cfg.root.leaderPrefixes.search}f" = actionWithDesc "current_buffer_fuzzy_find";

@@ -18,7 +18,7 @@ in {
   config = mkIf cfg.self.enable {
     plugins.undotree = {
       enable = true;
-      focusOnToggle = true;
+      settings.FocusOnToggle = true;
     };
 
     keymaps = [

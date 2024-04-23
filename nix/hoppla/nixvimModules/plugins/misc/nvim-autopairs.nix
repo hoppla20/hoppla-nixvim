@@ -19,7 +19,7 @@ in {
   config = mkIf cfg.self.enable {
     plugins.nvim-autopairs = {
       enable = true;
-      checkTs = cfg.root.plugins.languageSupport.treesitter.enable;
+      settings.check_ts = cfg.root.plugins.languageSupport.treesitter.enable;
     };
   };
 }

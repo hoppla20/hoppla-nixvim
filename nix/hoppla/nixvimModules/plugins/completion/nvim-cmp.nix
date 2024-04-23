@@ -27,49 +27,53 @@ in {
     plugins = {
       luasnip.enable = true;
 
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        completion.keywordLength = 3;
-        mappingPresets = [];
-        mapping = {
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-j>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
-          "<C-k>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
-          "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
-          "<C-e>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
-          "<C-h>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-l>" = "cmp.mapping.scroll_docs(4)";
-          "<C-p>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-a>" = "cmp.mapping.scroll_docs(4)";
-          "<C-g>" = "cmp.mapping.abort()";
-          "<CR>" = "cmp.mapping.confirm()";
-        };
-        snippet.expand = "luasnip";
-        sources = mkOrder 1000 [
-          {
-            name = "async_path";
-            option.trailing_slash = true;
-          }
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "buffer";}
-        ];
-        window = {
-          completion = {
-            border = "rounded";
+
+        settings = {
+          completion.keywordLength = 3;
+          mappingPresets = [];
+          mapping = {
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-j>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
+            "<C-k>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
+            "<C-n>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
+            "<C-e>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
+            "<C-h>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-l>" = "cmp.mapping.scroll_docs(4)";
+            "<C-p>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-a>" = "cmp.mapping.scroll_docs(4)";
+            "<C-g>" = "cmp.mapping.abort()";
+            "<CR>" = "cmp.mapping.confirm()";
           };
+          snippet.expand = "luasnip";
+          sources = mkOrder 1000 [
+            {
+              name = "async_path";
+              option.trailing_slash = true;
+            }
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {name = "buffer";}
+          ];
+          window = {
+            completion = {
+              border = "rounded";
+            };
+          };
+
+          sorting.comparators = [
+            "require('cmp_fuzzy_buffer.compare')"
+            "require('cmp.config.compare').offset"
+            "require('cmp.config.compare').exact"
+            "require('cmp.config.compare').score"
+            "require('cmp.config.compare').recently_used"
+            "require('cmp.config.compare').locality"
+            "require('cmp.config.compare').kind"
+            "require('cmp.config.compare').length"
+            "require('cmp.config.compare').order"
+          ];
         };
-        extraOptions.sorting.comparators = [
-          (helpers.mkRaw "require('cmp_fuzzy_buffer.compare')")
-          (helpers.mkRaw "require('cmp.config.compare').offset")
-          (helpers.mkRaw "require('cmp.config.compare').exact")
-          (helpers.mkRaw "require('cmp.config.compare').score")
-          (helpers.mkRaw "require('cmp.config.compare').recently_used")
-          (helpers.mkRaw "require('cmp.config.compare').locality")
-          (helpers.mkRaw "require('cmp.config.compare').kind")
-          (helpers.mkRaw "require('cmp.config.compare').length")
-          (helpers.mkRaw "require('cmp.config.compare').order")
-        ];
       };
     };
 

@@ -22,11 +22,13 @@ in {
     {
       plugins.oil = {
         enable = true;
-        deleteToTrash = true;
-        skipConfirmForSimpleEdits = true;
-        keymaps = {
-          "q" = "actions.close";
-          "gr" = "actions.refresh";
+        settings = {
+          deleteToTrash = true;
+          skip_confirm_for_simple_edits = true;
+          keymaps = {
+            "q" = "actions.close";
+            "gr" = "actions.refresh";
+          };
         };
       };
 
@@ -38,7 +40,7 @@ in {
       ];
     }
     (mkIf cfg.root.plugins.languageSupport.lsp.enable {
-      plugins.oil.extraOptions = {
+      plugins.oil.settings = {
         lsp_rename_autosave = "unmodified";
       };
     })

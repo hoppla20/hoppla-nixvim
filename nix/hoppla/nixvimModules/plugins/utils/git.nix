@@ -20,8 +20,10 @@ in {
     plugins = {
       neogit = {
         enable = true;
-        autoRefresh = true;
-        integrations.diffview = true;
+        settings = {
+          auto_refresh = true;
+          integrations.diffview = true;
+        };
       };
 
       fugitive.enable = true;

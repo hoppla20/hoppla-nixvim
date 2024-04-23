@@ -25,8 +25,11 @@ in {
 
     plugins.markdown-preview = {
       enable = true;
-      refreshSlow = true;
-      browserFunc = "OpenMarkdownPreview";
+
+      settings = {
+        refresh_slow = true;
+        browser_func = "OpenMarkdownPreview";
+      };
     };
   };
 }

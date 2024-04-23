@@ -25,7 +25,7 @@ in {
       };
     }
     (mkIf cfg.root.plugins.misc.telescope.enable {
-      plugins.telescope.extensions.project-nvim.enable = true;
+      plugins.project-nvim.enableTelescope = true;
       keymaps = [
         {
           key = "${cfg.root.leaderPrefixes.telescope}p";

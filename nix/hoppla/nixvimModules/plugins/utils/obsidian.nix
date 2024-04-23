@@ -26,15 +26,18 @@ in {
     mkIf cfg.self.enable {
       plugins.obsidian = {
         enable = true;
-        workspaces = [
-          (workspace defaultWorkspace)
-        ];
-        followUrlFunc = ''
-          function(url)
-            vim.fn.jobstart({"xdg-open", url})
-          end
-        '';
-        dailyNotes.folder = "Journals";
+
+        settings = {
+          workspaces = [
+            (workspace defaultWorkspace)
+          ];
+          follow_url_func = ''
+            function(url)
+              vim.fn.jobstart({"xdg-open", url})
+            end
+          '';
+          daily_notes.folder = "Journals";
+        };
       };
     };
 }
