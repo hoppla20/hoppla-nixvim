@@ -41,7 +41,7 @@ in {
     }
     (mkIf cfg.root.plugins.languageSupport.lsp.enable {
       plugins.oil.settings = {
-        lsp_rename_autosave = "unmodified";
+        lsp_file_method.autosave_changes = "unmodified";
       };
     })
   ]);
