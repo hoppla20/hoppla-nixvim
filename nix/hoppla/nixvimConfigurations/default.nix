@@ -61,7 +61,7 @@
           rainbow-delimiters.enable = true;
           indent-blankline.enable = true;
           # wilder.enable = true;
-          noice.enable = true;
+          noice.enable = false;
           notify.enable = true;
         };
 
